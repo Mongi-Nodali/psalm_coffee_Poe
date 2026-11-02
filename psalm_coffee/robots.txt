@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-REAL-DOMAIN/sitemap.xml
+Sitemap: https://psalmmcoffeee.netlify.app/sitemap.xml
