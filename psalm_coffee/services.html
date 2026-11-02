@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' https://code.jquery.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee, Venue Hire and Events | Psalm Coffee Pretoria</title>
+    <meta name="description" content="Explore coffee, takeaway, venue hire, Bible studies, business meetings, and small events at Psalm Coffee in Montana Park, Pretoria.">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!--Header-->
+     <header>
+        <div class="logo">
+        <img src="_images/psalm-coffee-logo.jpeg" alt="Psalm Coffee Logo"  width="150" height="150">
+    </div>
+        <h1>Psalm Coffee</h1>
+        <p>Coffee • Faith • Community</p>
+
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="services.html">Services</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="enquiry.html">Enquiry</a>
+        </nav>
+     </header>
+
+     <hr>
+
+    <!-- SERVICES -->
+    <section class="services">
+
+        <h2>Coffee, Venue Hire and Events in Pretoria</h2>
+
+        <div class="services-content">
+
+            <!-- Searchable service list populated by JavaScript -->
+            <div class="service-list">
+                <label for="service-search">Search our services</label>
+                <input id="service-search" type="search" placeholder="Try “meeting” or “coffee”" aria-describedby="service-count">
+                <label for="service-sort">Sort results</label>
+                <select id="service-sort"><option value="az">A to Z</option><option value="za">Z to A</option></select>
+                <p id="service-count" class="service-count" aria-live="polite"></p>
+                <ul id="service-results" class="service-results"></ul>
+                <p id="service-empty" class="service-empty" hidden>No services match your search. Try another word.</p>
+            </div>
+
+            <!-- SERVICE IMAGE -->
+            <div class="service-image">
+
+                <img src="_images/psalm-coffee-interior.jpeg"
+                     alt="Psalm Coffee interior" loading="lazy"
+                     decoding="async"
+                     width="320">
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <p>
+            (Delivery not currently available.)
+        </p>
+
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Psalm Coffee</h3>
+        <p>Coffee • Faith • Community</p>
+
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="services.html">Services</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="enquiry.html">Enquiry</a>
+        </nav>
+
+         <p>
+            622-124 Breed Street, Montana Park, Pretoria, 0186 |
+            084 351 9123 |
+            odette.krige@gmail.com
+        </p>
+
+        <p>
+            Facebook: Psalm Coffee Shop |
+            Instagram: @psalm_coffee_shop
+        </p>
+
+        <p>&copy; 2026 Psalm Coffee. All Rights Reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/site.js" defer></script>
+</body>
+</html>

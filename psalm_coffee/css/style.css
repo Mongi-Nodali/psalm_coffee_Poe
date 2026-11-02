@@ -1,0 +1,711 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #FAF6F1;          /* Soft cream */
+    --card-bg: #FFFFFF;
+    --text-color: #3E2E23;        /* Dark coffee brown */
+    --text-muted: #7A6857;        /* Muted mocha */
+    --primary-color: #5C4033;     /* Deep coffee brown */
+    --secondary-color: #B08968;   /* Warm latte */
+    --accent-color: #D9A5A0;      /* Soft blush */
+    --accent-dark: #C08A85;       /* Deeper blush */
+    --border-color: #E8DDD0;      /* Warm cream border */
+
+    --font-main: 'Quicksand', 'Segoe UI', Tahoma, sans-serif;
+    --font-heading: 'Georgia', serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.4rem; font-family: var(--font-heading); }
+h2 { font-size: 1.9rem; font-family: var(--font-heading); }
+h3 { font-size: 1.3rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+/*3. HEADER & NAVIGATION */
+header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 12px rgba(92, 64, 51, 0.06);
+}
+
+header .logo img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+}
+
+header p {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: var(--primary-color);
+    padding: 0.5rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* 4. HERO BANNER */
+.hero {
+    position: relative;
+    height: 520px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    background: linear-gradient(
+        rgba(62, 46, 35, 0.5),
+        rgba(92, 64, 51, 0.35)
+    ), url('_images/psalm-coffee-shop-exterior.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(92, 64, 51, 0.15);
+    margin:10 auto;
+}
+
+.hero-content {
+    color: white;
+    padding: 2rem;
+    max-width: 750px;
+}
+
+
+
+/* 5. GENERAL SECTIONS */
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 2.5rem auto;
+    max-width: 900px;
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* General Buttons */
+section a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.8rem;
+    border-radius: 25px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+section a:hover {
+    background-color: var(--accent-dark);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* 6. HOME PAGE - NEW LAYOUT */
+
+/* Introduction Section */
+.intro {
+    text-align: center;
+    max-width: 750px;
+    padding: 1rem;
+}
+
+.intro p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+/* Featured Coffees - Horizontal Row */
+.featured {
+    text-align: center;
+}
+
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.coffee-card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.coffee-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(92, 64, 51, 0.1);
+    border-color: var(--accent-color);
+}
+
+.coffee-card img {
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+}
+
+.coffee-card p {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Quote / Review Section */
+.review {
+    text-align: center;
+    background-color: var(--card-bg);
+    padding: 3.5rem 2rem;
+    border-radius: 16px;
+    border-left: 4px solid var(--accent-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.review p:first-of-type {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.review p:last-of-type {
+    font-weight: 700;
+    color: var(--secondary-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* Visit Section */
+.visit {
+    text-align: center;
+    background: linear-gradient(135deg, #F5E6D8, #FAF6F1);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+}
+
+.visit h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+}
+
+/* --- ABOUT PAGE --- */
+.story {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.story-text, .story-image {
+    flex: 1;
+}
+
+.story-image img, .service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(92, 64, 51, 0.1);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    background: var(--card-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 20px rgba(92, 64, 51, 0.08);
+}
+
+.value-card h3 {
+    color: var(--accent-dark);
+    font-family: var(--font-heading);
+}
+
+.different ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.different li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.different li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.1rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+/* --- SERVICES PAGE --- */
+.services-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.service-list {
+    flex: 1;
+}
+
+.service-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    padding-left: 1.5rem;
+    font-weight: 500;
+}
+
+.service-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.service-image {
+    flex: 1;
+}
+
+/* --- CONTACT PAGE --- */
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info, .hours, .map {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-info strong, .hours strong {
+    color: var(--primary-color);
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}
+
+.map iframe {
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+/* --- ENQUIRY PAGE --- */
+form {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    max-width: 620px;
+    margin: 0 auto;
+    box-shadow: 0 4px 16px rgba(92, 64, 51, 0.06);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(217, 165, 160, 0.2);
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/*8. FOOTER */
+footer {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #F5E6D8;
+    padding: 2.5rem 1rem;
+    border-radius: 16px;
+    margin-top: 3rem;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+}
+
+footer p {
+    color: #D5C4B4;
+    font-size: 0.9rem;
+}
+
+footer nav {
+    margin: 1.5rem 0;
+}
+
+footer nav a {
+    color: #F5E6D8;
+}
+
+footer nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/*9. RESPONSIVE DESIGN*/
+
+@media (max-width: 768px) {
+    .coffee-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story, .services-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero {
+        height: 420px;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+
+    .coffee-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .hero {
+        height: 380px;
+    }
+
+    .review {
+        padding: 2rem 1.2rem;
+    }
+
+    .review p:first-of-type {
+        font-size: 1.05rem;
+    }
+}
+
+/*Part 3*/
+.gallery-hint {
+    margin-top: 0.5rem;
+}
+
+.coffee-card img[role="button"] {
+    cursor: zoom-in;
+}
+
+.coffee-card img[role="button"]:focus-visible {
+    outline: 3px solid var(--accent-dark);
+    outline-offset: 4px;
+}
+
+.service-list input[type="search"] {
+    margin-top: 0.5rem;
+}
+
+.service-count {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.service-empty {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.lightbox {
+    width: min(90vw, 900px);
+    max-width: none;
+    max-height: 90vh;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.lightbox::backdrop {
+    background: rgba(25, 18, 14, 0.82);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 76vh;
+    margin: 1.5rem auto 0.5rem;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.lightbox p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.8rem;
+    border: 0;
+    background: transparent;
+    color: var(--primary-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* About page values accordion */
+.value-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent-dark);
+    font: 700 1.35rem var(--font-heading);
+    text-align: left;
+    cursor: pointer;
+}
+
+.value-toggle:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+.toggle-icon {
+    font: 400 1.6rem var(--font-main);
+}
+
+.value-detail {
+    margin: 0.8rem 0 0;
+    text-align: left;
+}
+
+.value-card:has(.value-toggle[aria-expanded="true"]) {
+    border-color: var(--accent-color);
+}
+
+.value-detail:not([hidden]) {
+    animation: reveal-value 220ms ease-out;
+}
+
+@keyframes reveal-value {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
